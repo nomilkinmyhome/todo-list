@@ -4,8 +4,8 @@ from flask_login import UserMixin
 from sqlalchemy.orm import validates
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from src.models import db
-from src.exceptions import InvalidEmail
+from . import db
+from exceptions import InvalidEmail
 
 
 class User(UserMixin, db.Model):

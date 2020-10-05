@@ -1,5 +1,6 @@
 flask
 flask-migrate
+flask-script
 flask-sqlalchemy
 flask-restx
 flask-login
