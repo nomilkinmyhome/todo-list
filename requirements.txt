@@ -1,4 +1,5 @@
 flask
 flask-migrate
 flask-sqlalchemy
+flask-restx
 psycopg2
