@@ -2,6 +2,7 @@ flask
 flask-migrate
 flask-sqlalchemy
 flask-restx
+flask-login
 psycopg2
 pytest
 flake8
