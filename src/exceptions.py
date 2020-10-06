@@ -4,3 +4,11 @@ class BaseError(Exception):
 
 class InvalidEmail(BaseError):
     pass
+
+
+class InvalidCredentials(BaseError):
+    pass
+
+
+class UserIsBlocked(BaseError):
+    pass

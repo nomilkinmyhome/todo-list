@@ -2,6 +2,7 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
+from flask_jwt_extended import JWTManager
 
 from models import db, init_db
 from models.user import User
@@ -20,6 +21,7 @@ def create_app():
 
 
 app = create_app()
+jwt = JWTManager(app)
 
 
 def init_manager(app, db):

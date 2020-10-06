@@ -3,7 +3,9 @@ flask-migrate
 flask-script
 flask-sqlalchemy
 flask-restx
+flask-jwt-extended
 flask-login
+flask-wtf
 psycopg2
 pytest
 flake8

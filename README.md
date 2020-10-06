@@ -16,6 +16,6 @@ A simple todo-list application written in Python 3 with Flask and SQLAlchemy.
 **In virtual environment:**
 1. ```pip install -r requirements-development.txt```
 2. ```python manage.py db stamp head```
-3. ```CONFIG_FILE=configs/development.cfg python manage.py upgrade```
+3. ```CONFIG_FILE=configs/development.cfg python manage.py db upgrade```
 4. ```CONFIG_FILE=configs/development.cfg python initialize.py```
 5. ```CONFIG_FILE=configs/development.cfg python app.py``` 

@@ -9,10 +9,14 @@ def deploy():
 
     with app.app_context():
         if not db.session.query(User.id).count():
-            new_admin = User(email='admin@email.com', is_admin=True)
+            new_admin = User(email='admin@email.com', is_admin=True, is_activated=True)
             new_admin.set_password('1')
+            new_user = User(email='user@email.com', is_activated=True)
+            new_user.set_password('2')
+            new_non_activated_user = User(email='blocked@email.com')
+            new_non_activated_user.set_password('3')
 
-            db.session.add(new_admin)
+            db.session.add_all((new_admin, new_user, new_non_activated_user))
             db.session.commit()
 
 
