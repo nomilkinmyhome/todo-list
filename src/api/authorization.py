@@ -15,7 +15,7 @@ class Auth(Resource):
 
 
 @auth_namespace.route('/auth/refresh')
-class Auth(Resource):
+class Refresh(Resource):
     @jwt_refresh_token_required
     @auth_namespace.marshal_with(tokens_fields)
     def post(self):
