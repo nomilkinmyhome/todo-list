@@ -6,7 +6,7 @@ from flask_jwt_extended import JWTManager
 
 from models import db, init_db
 from models.user import User
-from models.todo import Todo
+from models.todo import Todo  # noqa: F401
 import api
 
 

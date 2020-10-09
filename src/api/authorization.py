@@ -10,7 +10,8 @@ from .marshallers import tokens_fields
 class Auth(Resource):
     @auth_namespace.marshal_with(tokens_fields)
     def post(self):
-        email, password = rest_api.payload['email'], rest_api.payload['password']
+        email = rest_api.payload['email']
+        password = rest_api.payload['password']
         return auth(email, password)
 
 
