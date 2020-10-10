@@ -16,7 +16,8 @@ def create_todo(user_id, payload):
 def update_todo(todo_id, payload):
     todo = Todo.query.get_or_404(todo_id)
     for key, value in payload.items():
-        setattr(todo, key, value)
+        if value:
+            setattr(todo, key, value)
     db.session.add(todo)
     db.session.commit()
     return todo

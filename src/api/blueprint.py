@@ -31,14 +31,14 @@ rest_api.add_namespace(todo_namespace)
 @rest_api.errorhandler(WrongTokenError)
 @rest_api.errorhandler(InvalidCredentials)
 def handle_invalid_credentials_error(error):
-    return {'status': 'err', 'message': str(error)}, 401
+    return {'message': str(error)}, 401
 
 
 @rest_api.errorhandler(Forbidden)
 def handle_forbidden(error):
-    return {'status': 'err', 'message': str(error)}, 403
+    return {'message': str(error)}, 403
 
 
 @rest_api.errorhandler(UserIsBlocked)
 def handle_user_is_blocked_error(error):
-    return {'status': 'err', 'message': str(error)}, 403
+    return {'message': str(error)}, 403
