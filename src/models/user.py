@@ -1,11 +1,7 @@
-import re
-
 from flask_login import UserMixin
-from sqlalchemy.orm import validates
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from . import db
-from exceptions import InvalidEmail
 
 
 class User(UserMixin, db.Model):
@@ -16,13 +12,6 @@ class User(UserMixin, db.Model):
 
     is_admin = db.Column(db.Boolean, default=False)
     is_activated = db.Column(db.Boolean, default=False)
-
-    @validates('email')
-    def validate_email(self, key, email):
-        if not re.search(r'^[\w\.\+\-]+\@[\w]+\.[a-z]{2,3}$', email):
-            raise InvalidEmail
-
-        return email
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
