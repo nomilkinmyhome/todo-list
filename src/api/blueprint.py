@@ -2,13 +2,11 @@ from flask import Blueprint
 from flask_restx import Api, Namespace
 from flask_jwt_extended.exceptions import (WrongTokenError,
                                            NoAuthorizationError,
-                                           CSRFError as JWTCSRFError,
                                            JWTDecodeError,
                                            InvalidHeaderError,
                                            RevokedTokenError,
                                            FreshTokenRequired,
                                            UserLoadError)
-from flask_wtf.csrf import CSRFError as WTFCSRFError
 from werkzeug.exceptions import Forbidden
 
 from src.exceptions import InvalidCredentials, UserIsBlocked
@@ -44,9 +42,3 @@ def handle_forbidden(error):
 @rest_api.errorhandler(UserIsBlocked)
 def handle_user_is_blocked_error(error):
     return {'status': 'err', 'message': str(error)}, 403
-
-
-@rest_api.errorhandler(JWTCSRFError)
-@rest_api.errorhandler(WTFCSRFError)
-def handle_csrf_error(error):
-    return {'status': 'err', 'message': str(error.description)}, 403

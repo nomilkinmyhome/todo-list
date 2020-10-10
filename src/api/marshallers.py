@@ -19,6 +19,5 @@ user_detail_fields = rest_api.model('UserDetail', {
 
 tokens_fields = rest_api.model('Tokens', {
     'access_token': fields.String(),
-    'refresh_token': fields.String(),
-    'csrf_token': fields.String()
+    'refresh_token': fields.String()
 })
