@@ -6,3 +6,4 @@ flask-restx
 flask-jwt-extended
 flask-login
 psycopg2
+gunicorn
