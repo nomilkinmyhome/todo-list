@@ -17,9 +17,9 @@ def create_app():
     app = Flask(__name__)
     app.config.from_envvar('CONFIG_FILE', silent=True)
 
-    if not app.config['SECRET_KEY']:
+    if 'SECRET_KEY' not in app.config:
         app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-    if not app.config['SQLALCHEMY_DATABASE_URI']:
+    if 'SQLALCHEMY_DATABASE_URI' not in app.config:
         app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
 
     init_db(app)
@@ -52,7 +52,6 @@ def load_user(id):
 
 
 manager = init_manager(app, db)
-
 
 if __name__ == '__main__':
     app.run()
