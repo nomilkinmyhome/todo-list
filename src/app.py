@@ -8,6 +8,7 @@ from models import db, init_db
 from models.user import User
 from models.todo import Todo  # noqa: F401
 import api
+import pages
 
 
 def create_app():
@@ -17,6 +18,7 @@ def create_app():
     init_db(app)
 
     app.register_blueprint(api.blueprint)
+    app.register_blueprint(pages.blueprint)
 
     return app
 
