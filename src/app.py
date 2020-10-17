@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask
 from flask_login import LoginManager
 from flask_migrate import Migrate, MigrateCommand
@@ -14,6 +16,11 @@ import src.pages
 def create_app():
     app = Flask(__name__)
     app.config.from_envvar('CONFIG_FILE', silent=True)
+
+    if not app.config['SECRET_KEY']:
+        app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+    if not app.config['SQLALCHEMY_DATABASE_URI']:
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
 
     init_db(app)
 
