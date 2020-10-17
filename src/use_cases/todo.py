@@ -1,5 +1,5 @@
-from models import db
-from models.todo import Todo
+from src.models import db
+from src.models.todo import Todo
 
 
 def get_todo_info(todo_id):

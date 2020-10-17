@@ -1,7 +1,7 @@
 from flask_restx import Resource
 from flask_jwt_extended import jwt_refresh_token_required, get_jwt_identity
 
-from use_cases.authorization import auth, refresh
+from src.use_cases.authorization import auth, refresh
 from .blueprint import auth_namespace
 from .marshallers import tokens_fields
 from .parsers import auth_parser

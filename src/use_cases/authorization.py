@@ -1,7 +1,7 @@
 from flask_jwt_extended import create_access_token, create_refresh_token
 
-from exceptions import UserIsBlocked, InvalidCredentials
-from models.user import User
+from src.exceptions import UserIsBlocked, InvalidCredentials
+from src.models.user import User
 
 
 def get_tokens(user):

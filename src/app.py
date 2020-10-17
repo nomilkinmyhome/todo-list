@@ -4,11 +4,11 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from flask_jwt_extended import JWTManager
 
-from models import db, init_db
-from models.user import User
-from models.todo import Todo  # noqa: F401
-import api
-import pages
+from src.models import db, init_db
+from src.models.user import User
+from src.models.todo import Todo  # noqa: F401
+import src.api
+import src.pages
 
 
 def create_app():
@@ -17,8 +17,8 @@ def create_app():
 
     init_db(app)
 
-    app.register_blueprint(api.blueprint)
-    app.register_blueprint(pages.blueprint)
+    app.register_blueprint(src.api.blueprint)
+    app.register_blueprint(src.pages.blueprint)
 
     return app
 

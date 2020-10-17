@@ -1,6 +1,6 @@
 from flask_restx import Resource
 
-from use_cases.user import get_users_list, get_user_info
+from src.use_cases.user import get_users_list, get_user_info
 from .blueprint import user_namespace
 from .marshallers import user_detail_fields
 from .permissions import is_admin, is_user_or_admin

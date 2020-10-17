@@ -1,7 +1,7 @@
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_restx import Resource
 
-from use_cases.todo import create_todo, update_todo, delete_todo, get_todo_info
+from src.use_cases.todo import create_todo, update_todo, delete_todo, get_todo_info
 from .blueprint import todo_namespace
 from .marshallers import todo_detail_fields
 from .permissions import is_creator_or_admin

@@ -1,4 +1,4 @@
-from use_cases.todo import create_todo, update_todo
+from src.use_cases.todo import create_todo, update_todo
 
 
 def test_create_todo(client, user):

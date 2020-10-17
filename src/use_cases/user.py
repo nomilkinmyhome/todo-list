@@ -1,4 +1,4 @@
-from models.user import User
+from src.models.user import User
 
 
 def get_users_list(page=1, per_page=5):

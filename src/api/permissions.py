@@ -3,8 +3,8 @@ from functools import wraps
 from werkzeug.exceptions import Forbidden
 from flask_jwt_extended import verify_jwt_in_request, get_jwt_identity
 
-from models.user import User
-from models.todo import Todo
+from src.models.user import User
+from src.models.todo import Todo
 
 
 def is_admin(method):
