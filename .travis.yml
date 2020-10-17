@@ -1,0 +1,16 @@
+dist: bionic
+language: python
+python:
+  - "3.8"
+services:
+  - postgresql
+before_script:
+  - psql -c 'CREATE DATABASE todolist_test_db;' -U postgres
+  - psql -c 'CREATE USER todolist_user --password 1;' -U postgres
+  - psql -c 'GRANT ALL ON DATABASE todolist_test_db TO todolist_user;' -U postgres
+env:
+  CONFIG_FILE=src/configs/testing.cfg
+script:
+  pytest
+install:
+  - pip3 install -r requirements-development.txt
