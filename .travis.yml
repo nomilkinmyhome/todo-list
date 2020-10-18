@@ -12,6 +12,6 @@ env:
   CONFIG_FILE=src/configs/testing.cfg
   SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://todolist_user:1@127.0.0.1:5432/todolist_test_db
 script:
-  pytest
+  pytest && flake8 --config=src/configs/.flake8
 install:
   - pip3 install -r requirements-development.txt
