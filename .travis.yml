@@ -11,6 +11,6 @@ before_script:
 env:
   CONFIG_FILE=src/configs/testing.cfg
 script:
-  pytest
+  CONFIG_FILE=src/configs/testing.cfg pytest
 install:
   - pip3 install -r requirements-development.txt
