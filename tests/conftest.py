@@ -3,7 +3,7 @@ import pytest
 from src.app import create_app
 from src.models import db
 from src.models.user import User
-from src.models.todo import Todo
+from src.models.todo import Todo  # noqa: F401
 
 
 @pytest.fixture(scope='session')

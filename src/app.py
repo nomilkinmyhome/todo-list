@@ -20,7 +20,7 @@ def create_app():
     if 'SECRET_KEY' not in app.config:
         app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
     if 'SQLALCHEMY_DATABASE_URI' not in app.config:
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')  # noqa: E501
 
     init_db(app)
 
